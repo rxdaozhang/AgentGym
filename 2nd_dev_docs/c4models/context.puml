@@ -1,0 +1,28 @@
+@startuml AgentGym C4 Context Diagram
+
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Context.puml
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+
+' CONTEXT LEVEL
+!define DEVICONS https://raw.githubusercontent.com/tupadr3/plantuml-icon-font-sprites/master/devicons
+!include DEVICONS/python.puml
+
+Person(researcher, "研究人员", "使用系统开发和评估基于LLM的智能体")
+
+System_Boundary(agentgym, "AgentGym框架") {
+    System(agentenv, "AgentEnv核心库", "提供核心功能和接口")
+}
+
+System_Ext(llm, "大型语言模型", "提供智能体的基础能力")
+System_Ext(environment, "环境服务", "提供各种环境交互能力")
+System_Ext(verl, "VERL框架", "RL训练框架")
+System_Ext(mongodb, "MongoDB", "存储轨迹数据")
+
+Rel(researcher, agentgym, "使用")
+Rel(agentgym, llm, "调用")
+Rel(agentgym, environment, "交互")
+Rel(agentgym, verl, "集成")
+Rel(agentgym, mongodb, "存储/读取数据")
+
+@enduml
