@@ -1,3 +1,7 @@
+# data
+agentenv_gaia/data/
+agentenv_gaia/agentenv_gaia/data
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
