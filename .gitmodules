@@ -1,3 +1,6 @@
 [submodule "agentenv-lmrlgym/lmrlgym"]
 	path = agentenv-lmrlgym/lmrlgym
 	url = https://github.com/abdulhaim/LMRL-Gym.git
+[submodule "OpenManus"]
+	path = OpenManus
+	url = https://github.com/mannaandpoem/OpenManus.git
